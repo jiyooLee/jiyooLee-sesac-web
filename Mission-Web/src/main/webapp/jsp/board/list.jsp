@@ -18,11 +18,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-	hr, table {
-		width: 80%
-	}
-</style>
+<link rel="stylesheet" href="/Mission-Web/css/layout.css">
+<link rel="stylesheet" href="/Mission-Web/css/board.css">
 <script>
 	function goWriteForm() {
 		location.href = "writeForm.jsp"
@@ -30,12 +27,16 @@
 </script>
 </head>
 <body>
-	<div align="center">
+	<header>
+		<jsp:include page="/jsp/include/topMenu.jsp" />
+	</header>
+	<section>
+		<div align="center">
 		<hr>
 		<h2>게시판 목록</h2>
 		<hr>
 		<br>
-		<table border="1">
+		<table border="1" class="list">
 			<tr>
 				<th width="7%">번호</th>
 				<th>제목</th>
@@ -60,8 +61,25 @@
 		<br>
 		<button onclick="goWriteForm()">새글등록</button>
 	</div>
+	</section>
+	<footer>
+		<%@ include file="/jsp/include/footer.jsp" %>
+	</footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

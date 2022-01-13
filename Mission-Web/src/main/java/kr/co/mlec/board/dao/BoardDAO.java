@@ -11,14 +11,14 @@ import kr.co.mlec.util.ConnectionFactory;
 import kr.co.mlec.util.JDBCClose;
 
 /**
- * °Ô½ÃÆÇ DB(tbl_board) CRUD
+ * ê²Œì‹œíŒ DB(tbl_board) CRUD
  * @author user
  *
  */
 public class BoardDAO {
 
 	/**
-	 * ÀüÃ¼°Ô½Ã±Û Á¶È¸
+	 * ì „ì²´ê²Œì‹œê¸€ ì¡°íšŒ
 	 */
 	public List<BoardVO> selectAllBoard()  {
 		
@@ -55,7 +55,7 @@ public class BoardDAO {
 	}
 	
 	/**
-	 * »õ±Ûµî·Ï
+	 * ìƒˆê¸€ë“±ë¡
 	 */
 	public void insertBoard(BoardVO board) {
 		Connection conn = null;
@@ -79,7 +79,7 @@ public class BoardDAO {
 	}
 	
 	/**
-	 * °Ô½ÃÆÇ¹øÈ£¿¡ ÇØ´ç °Ô½Ã±Û Á¶È¸
+	 * ê²Œì‹œíŒë²ˆí˜¸ì— í•´ë‹¹ ê²Œì‹œê¸€ ì¡°íšŒ
 	 */
 	public BoardVO selectBoardByNo(int boardNo) {
 		Connection conn = null;
@@ -116,6 +116,34 @@ public class BoardDAO {
 		return board;
 	}
 	
+	/**
+	 * ê²Œì‹œë¬¼ ìˆ˜ì • (ì œëª©, ì‘ì„±ì, ë‚´ìš©)
+	 */
+	public void updateBoard(BoardVO board) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			
+			conn = new ConnectionFactory().getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append("update tbl_board ");
+			sql.append("   set title = ?, writer = ?, content = ? ");
+			sql.append(" where no = ? ");
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getWriter());
+			pstmt.setString(3, board.getContent());
+			pstmt.setInt(4, board.getNo());
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCClose.close(pstmt, conn);
+		}
+	}
 }
 
 

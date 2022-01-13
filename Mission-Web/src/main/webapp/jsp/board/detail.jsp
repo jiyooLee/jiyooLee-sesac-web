@@ -33,16 +33,14 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판 상세페이지</title>
-<style>
-	hr, table {
-		width: 80%
-	}
-</style>
+<link rel="stylesheet" href="/Mission-Web/css/layout.css">
+<link rel="stylesheet" href="/Mission-Web/css/board.css">
 <script>
 	function doAction(type) {
 		
 		switch(type) {
 		case 'U' : 
+			location.href = "updateForm.jsp?no=${ param.no }"
 			break
 		case 'D' : 
 			break
@@ -55,7 +53,11 @@
 </script>
 </head>
 <body>
-	<div align="center">
+	<header>
+		<jsp:include page="/jsp/include/topMenu.jsp" />
+	</header>
+	<section>
+		<div align="center">
 		<hr>
 		<h2>게시판 상세</h2>
 		<hr>
@@ -91,5 +93,21 @@
 		<button onclick="doAction('D')">삭제</button>
 		<button onclick="doAction('L')">목록</button>
 	</div>
+	</section>
+	<footer>
+		<%@ include file="/jsp/include/footer.jsp" %>
+	</footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
