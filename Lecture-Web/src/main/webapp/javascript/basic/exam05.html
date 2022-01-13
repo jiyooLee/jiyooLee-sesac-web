@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num = prompt('정수를 하나 입력하세요')
+	num = Number(num)
+	
+	// 방법3
+	var msg = (num % 2 == 0 ? "짝수입니다" : "홀수입니다")
+	alert(num + ' : ' + msg)
+	
+	/*
+	// 방법2
+	switch(num % 2) {
+	case 0 : 
+		alert('짝수')
+		break
+	case 1 : 
+		alert('홀수')
+		break
+	} 
+	*/
+	
+	/*
+	// 방법 1
+	if(num % 2 == 0) {
+		alert('짝수입니다')
+	} else {
+		alert('홀수입니다')
+	}
+	*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

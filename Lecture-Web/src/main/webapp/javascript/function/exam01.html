@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 선언적함수(함수선언식)
+	function testFunction() {
+		alert('call...')
+	}
+	
+	function testFunction2(data) {
+		alert('data : ' + data)
+	}
+	
+	function testFunction3(data, data2) {
+		alert(`data : ${ data }, data2 : ${ data2 }`)
+	}
+	
+	function sum(a, b) {
+		return a + b
+	}
+	
+	var temp = function func() {
+		alert('call func()')
+	}
+	
+	// 익명함수(함수표현식)
+	var func01 = function() {
+		alert('call func01()...')
+	}
+	
+	var aaa = function() {
+		alert('익명함수 aaa호출...')
+	}
+	
+	function aaa() {
+		alert('선언적함수 aaa호출...')
+	}
+	
+	function callbackFunction(f) {
+		f()
+	}
+	
+	////////// 함수 호출부 ////////////
+	
+	callbackFunction(function() {
+		alert('익명함수 호출....')	
+	})
+	
+	callbackFunction(temp)
+	callbackFunction(testFunction)
+	
+	aaa()
+	
+	func01()
+	
+	temp()
+	
+	let total = sum(10, 20)
+	alert('총합 : ' + total)
+	
+	testFunction()
+	testFunction2(10)
+	testFunction3(4, 9)
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

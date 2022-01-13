@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input[type=password] {
+		background-color: olive;
+	}
+	
+	img {
+		width: 100px;
+		height: 100px;
+		border: 5px solid red;
+	}
+	
+	img[src ^= "../"] {
+		border-color: blue;
+	}
+	
+	img[src $= 'png'] {
+		border-color: green;
+	}
+	
+	img[src *= o] {
+		border-color: orange;
+	}
+</style>
+</head>
+<body>
+	<form>
+		아이디 : <input type="text"><br>
+		패스워드 : <input type="password"><br>
+	</form>
+	<br>
+	<img src="../html/images/dog.jpg">
+	<img src="../html/images/pencil.png">
+	<img src="/Lecture-Web/html/images/cat.gif">
+	<img src="../html/images/dog3.jpg">
+</body>
+</html>
+
+
+
+
+
+
+
+

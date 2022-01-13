@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1:first-child {
+		color: red
+	}
+	
+	h1:first-of-type {
+		color: green
+	}
+	
+	h2:last-of-type {
+		color: orange
+	}
+	
+	p::first-line {
+		text-decoration: underline;
+	}
+	
+	p::first-letter {
+		font-size: 4em
+	}
+	
+	p::selection {
+		background-color: yellow
+	}
+</style>
+</head>
+<body>
+	<p>
+		ABCDEFGHIJKLM<br>
+		NOPQRSTUVWXYZ
+	</p>
+	
+	<p>
+		abcdefghijklmnop<br>
+		qrstuvwxzy
+	</p>
+
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h3>Header-3</h3>
+	<h4>Header-5</h4>
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h6>Header-6</h6>
+	<div>
+		<h2>Sub-2</h2>
+		<h1>Sub-1</h1>
+	</div>
+	
+</body>
+</html>

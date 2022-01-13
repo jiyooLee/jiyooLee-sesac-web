@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var a = 10
+	let b = 20
+	const c = 30
+	
+	alert(`a : ${ a }, b : ${ b }, c : ${ c }`)
+	
+	a = a + 50
+	b = b + 50
+//	c = c + 50		// 대입금지
+
+	alert(`a : ${ a }, b : ${ b }, c : ${ c }`)
+	
+	var a = 100
+//	let b = 200	 // 재선언 금지
+	alert(`a : ${ a }, b : ${ b }, c : ${ c }`)
+	
+	{
+		var temp = 1000
+		let letTemp = 2000
+		alert(`temp : ${ temp }, letTemp : ${ letTemp }`)
+	}
+//	alert(`temp : ${ temp }, letTemp : ${ letTemp }`)
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+

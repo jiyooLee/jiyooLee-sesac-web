@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let check = confirm('현재시간을 확인할까요?')
+	if(check) {
+		let d = new Date()
+		let hour = d.getHours()
+		
+		if(hour < 12) {
+			alert('아침먹자....')
+		} else if(hour < 18) {
+			alert('점식먹자...')
+		} else {
+			alert('저녁먹자...')
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
