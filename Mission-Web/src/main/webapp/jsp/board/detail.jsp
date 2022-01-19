@@ -7,6 +7,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%--
 	http://localhost:9999/Mission-Web/jsp/board/detail.jsp?no=3
 	
@@ -22,6 +23,7 @@
 	
 	// 2.
 	BoardDAO dao = new BoardDAO();
+	dao.incrementViewCnt(boardNo);
 	BoardVO board = dao.selectBoardByNo(boardNo);
 	
 	// 공유영역 등록(JSP에서 EL,JSTL 접근하기 위해서)
@@ -89,8 +91,10 @@
 			</tr>
 		</table>
 		<br>
-		<button onclick="doAction('U')">수정</button>
-		<button onclick="doAction('D')">삭제</button>
+		<c:if test="${ board.writer eq userVO.id }">
+			<button onclick="doAction('U')">수정</button>
+			<button onclick="doAction('D')">삭제</button>
+		</c:if>
 		<button onclick="doAction('L')">목록</button>
 	</div>
 	</section>

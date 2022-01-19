@@ -117,6 +117,26 @@ public class BoardDAO {
 	}
 	
 	/**
+	 * 조회수 증가
+	 */
+	public void incrementViewCnt(int no) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("update tbl_board ");
+		sql.append("   set view_cnt = view_cnt + 1 ");
+		sql.append(" where no = ? ");
+		
+		try(
+			Connection conn = new ConnectionFactory().getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		) {
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
 	 * 게시물 수정 (제목, 작성자, 내용)
 	 */
 	public void updateBoard(BoardVO board) {
