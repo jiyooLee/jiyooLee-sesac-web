@@ -35,14 +35,8 @@ public class DispatcherServlet extends HttpServlet {
 			
 			String callPage = control.handleRequest(request, response);
 			
-			// forward or sendRedirect 선택
-			if(callPage.startsWith("redirect:")) {
-				callPage = callPage.substring("redirect:".length());
-				response.sendRedirect(request.getContextPath() + callPage);
-			} else {
-				RequestDispatcher dispatcher = request.getRequestDispatcher(callPage);
-				dispatcher.forward(request, response);
-			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher(callPage);
+			dispatcher.forward(request, response);
 			
 		} catch(Exception e) {
 			e.printStackTrace();

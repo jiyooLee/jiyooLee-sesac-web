@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>Mission-Web-MVC</display-name>
-  
+  <display-name>MyProject</display-name>
+
 	<servlet>
 		<servlet-name>dispatcherServlet</servlet-name>
 		<servlet-class>kr.co.mlec.controller.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>propLocation</param-name>
-			<param-value>D:/Lecutre/web-workspace/Mission-Web-MVC/bean.properties</param-value>
+			<param-value>D:/Lecutre/web-workspace/MyProject/bean.properites</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>

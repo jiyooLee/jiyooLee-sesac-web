@@ -2,7 +2,6 @@ package kr.co.mlec.controller;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -28,8 +27,7 @@ public class HandlerMapping {
 				System.out.println(key + " : " + className);
 				
 				Class<?> clz = Class.forName(className);
-				Constructor<?> constructor = clz.getConstructor();
-				mappings.put(key.toString(), (Controller)constructor.newInstance());
+				mappings.put(key.toString(), (Controller)clz.newInstance());
 			
 			}
 			
